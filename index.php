@@ -1,4 +1,5 @@
 <?php
+require_once('functional.php');
 // Устанавливаем время жизни сессии
 $sessionTime = 86400; // 10 секунд для тестирования
 ini_set('session.gc_maxlifetime', $sessionTime);
@@ -28,8 +29,6 @@ if (isset($_POST['logout'])) {
 // Если сессия активна, обновляем время последней активности пользователя
 $_SESSION['last_activity'] = time();
 
-// Устанавливаем флаг авторизации
-$_SESSION['auth'] = true;
 ?>
 
 <!DOCTYPE html>
@@ -38,6 +37,7 @@ $_SESSION['auth'] = true;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Личный кабинет</title>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
     <?php if (isset($_SESSION['auth'])): ?>

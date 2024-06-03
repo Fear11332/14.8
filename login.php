@@ -19,12 +19,18 @@
     <title>салон красоты</title>
 </head>
 <body>
-    <div class="login-register"></div>
-    <form action="index.php" method="post">
-        <input  name="age" type="text" placeholder="Дата рождения"> 
-        <input name="login" type="text" placeholder="Логин">
-        <input name="password" type="password" placeholder="Пароль">
-        <input name="submit" type="submit" value="Регистрация">
+    <div class="login-register">
+    <form action="verification.php" method="post">
+        <input  name="age" min="1900-01-01" max="2050-12-31" type="date" placeholder="день месяц год" required> 
+        <input name="login" type="text" placeholder="Логин" required>
+        <input name="password" type="password" placeholder="Пароль" required>
+        <input name="reg" type="submit" value="Регистрация">
     </form>
+    <form action="verification.php" method="post">
+        <input name="login" type="text" placeholder="Логин" required>
+        <input name="password" type="password" placeholder="Пароль" required>
+       <input name="enter" type="submit" value="Вход">
+    </form> 
+    </div>
 </body>
 </html>
