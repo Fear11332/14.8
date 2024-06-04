@@ -28,7 +28,7 @@
     }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
+    .row.content {height: 100vh}
     
     /* Set gray background color and 100% height */
     .sidenav {
@@ -45,13 +45,13 @@
     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
+   /* @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;
         padding: 15px;
       }
       .row.content {height:auto;} 
-    }
+    }*/
   </style>
 </head>
 <body>
@@ -74,7 +74,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" id="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="#" id="register"><span class="glyphicon glyphicon-log-in"></span> Register</a></li>
+        <div id="register-container" class="login-register"></div>
+    </div>
       </ul>
     </div>
   </div>
@@ -87,7 +88,7 @@
       <p><a href="#">Link</a></p>
       <p><a href="#">Link</a></p>
     </div>
-    <div class="col-sm-8 text-left"> 
+    <div class="col-sm-8 text-left">
       <h1>Welcome</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <hr>
@@ -107,8 +108,6 @@
 <footer class="container-fluid text-center">
   <span>©&nbsp;saw</span>
 </footer>
-    <div id="register-container" class="login-register">
-    </div>
     <script src="effects.js"></script>
 </body>
 </html>
