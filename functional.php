@@ -1,4 +1,5 @@
 <?php
+    $sessionTime=86400;
     class User{
         private int $year;
         private int $month;
@@ -53,5 +54,8 @@
     }
 
     function getCurrentUser():?string{
-        
+        if(isset($_SESSION)){
+            return $_SESSION['login']??'';
+        }
+        return null;
     }

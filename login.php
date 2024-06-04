@@ -1,5 +1,5 @@
 <?php
-    $sessionTime=86400;
+    require_once('functional.php');
     ini_set('session.gc_maxlifetime', $sessionTime);
     ini_set('session.cookie_lifetime', $sessionTime);
     session_start();    
