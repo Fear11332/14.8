@@ -24,6 +24,12 @@
                 'password' => $this->password
             ];
         }
+
+        public function isBirthdayToday(): bool {
+            $today = new DateTime(); // текущая дата
+            $birthDate = new DateTime("{$this->year}-{$this->month}-{$this->day}"); 
+            return $today->format('m-d') === $birthDate->format('m-d');
+        }
     }
 
     function getUserList(): array{
@@ -58,4 +64,15 @@
             return $_SESSION['login']??'';
         }
         return null;
+    }
+
+    function findUser($login,$password):?User{
+            $currentUser = null;
+            $users = getUserList();
+            foreach($users as $user){
+                if($user['login']==$login && $user['password']==sha1($password)){
+                    $currentUser = new User($user['year'],$user['month'],$user['day'],$login,$password);
+                }
+            }
+            return $currentUser;
     }

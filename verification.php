@@ -26,6 +26,9 @@ require_once("functional.php");
             $_SESSION['auth'] = true;
             $_SESSION['login'] = $currentUser->toArray()['login'];
             $_SESSION['password'] = $currentUser->toArray()['password'];
+            $_SESSION['year'] = $currentUser->toArray()['year'];
+            $_SESSION['month'] = $currentUser->toArray()['month'];
+            $_SESSION['day'] = $currentUser->toArray()['day'];
             header("Location: index.php");
             exit;
         }
@@ -35,6 +38,10 @@ require_once("functional.php");
             $_SESSION['auth'] = true;
             $_SESSION['login'] = $_POST['login'];
             $_SESSION['password'] = sha1($_POST['password']);
+            $currentUser = findUser($_POST['login'],$_POST['password']);
+            $_SESSION['year'] = $currentUser->toArray()['year'];
+            $_SESSION['month'] = $currentUser->toArray()['month'];
+            $_SESSION['day'] = $currentUser->toArray()['day'];
             header("Location: index.php");
             exit;
         }
