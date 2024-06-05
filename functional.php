@@ -33,6 +33,7 @@
     }
 
     function getUserList(): array{
+        $file = fopen("dataBase.json","c+");
         $users = json_decode(file_get_contents("dataBase.json"),true);
         return $users??[];
     }
