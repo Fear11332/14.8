@@ -142,7 +142,7 @@ $_SESSION['count'] = $count;
         </p>
         <?php endif; ?>
         <?php if(($count>1 &&(new User($_SESSION['year'],$_SESSION['month'],$_SESSION['day'],$_SESSION['login'],$_SESSION['password']))->isBirthdayToday())):?>
-            <p><h2 style="text-align: center;">Поздравляем вас с днем рождения и дарим скидку 10% на весь пакет услуг нашей сети!</h2></p>
+            <p><h2 style="text-align: center;">Поздравляем вас с днем рождения и дарим скидку 5% на весь пакет услуг нашей сети!</h2></p>
         <?php endif;?>
     </div>
     <div class="col-sm-2 sidenav">
